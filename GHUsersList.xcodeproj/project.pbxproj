@@ -21,8 +21,11 @@
 		9B543E0529E05F2E001F60D8 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E0429E05F2E001F60D8 /* Endpoint.swift */; };
 		9B543E0729E05FCF001F60D8 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E0629E05FCF001F60D8 /* RequestError.swift */; };
 		9B543E0929E0600D001F60D8 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E0829E0600D001F60D8 /* NetworkClient.swift */; };
-		9B543E0D29E0614F001F60D8 /* SearchUsersEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E0C29E0614F001F60D8 /* SearchUsersEndpoint.swift */; };
+		9B543E0D29E0614F001F60D8 /* UsersRelatedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E0C29E0614F001F60D8 /* UsersRelatedService.swift */; };
 		9B543E0F29E06232001F60D8 /* RepositoryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E0E29E06232001F60D8 /* RepositoryEndpoint.swift */; };
+		9B543E1229E066B5001F60D8 /* UsersRelatedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E1129E066B5001F60D8 /* UsersRelatedService.swift */; };
+		9B543E1429E066C1001F60D8 /* RepositoriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E1329E066C1001F60D8 /* RepositoriesService.swift */; };
+		9B543E1629E06875001F60D8 /* GHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E1529E06875001F60D8 /* GHUserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +45,11 @@
 		9B543E0429E05F2E001F60D8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		9B543E0629E05FCF001F60D8 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		9B543E0829E0600D001F60D8 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
-		9B543E0C29E0614F001F60D8 /* SearchUsersEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUsersEndpoint.swift; sourceTree = "<group>"; };
+		9B543E0C29E0614F001F60D8 /* UsersRelatedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRelatedService.swift; sourceTree = "<group>"; };
 		9B543E0E29E06232001F60D8 /* RepositoryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryEndpoint.swift; sourceTree = "<group>"; };
+		9B543E1129E066B5001F60D8 /* UsersRelatedService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRelatedService.swift; sourceTree = "<group>"; };
+		9B543E1329E066C1001F60D8 /* RepositoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesService.swift; sourceTree = "<group>"; };
+		9B543E1529E06875001F60D8 /* GHUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				9B543DF629E05452001F60D8 /* RepositoryModel.swift */,
+				9B543E1529E06875001F60D8 /* GHUserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,6 +167,7 @@
 		9B543E0129E05E8F001F60D8 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				9B543E1029E0669F001F60D8 /* Services */,
 				9B543E0A29E0612B001F60D8 /* Common */,
 				9B543E0B29E06139001F60D8 /* Endpoints */,
 			);
@@ -179,10 +187,19 @@
 		9B543E0B29E06139001F60D8 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
-				9B543E0C29E0614F001F60D8 /* SearchUsersEndpoint.swift */,
+				9B543E0C29E0614F001F60D8 /* UsersRelatedService.swift */,
 				9B543E0E29E06232001F60D8 /* RepositoryEndpoint.swift */,
 			);
 			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		9B543E1029E0669F001F60D8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9B543E1129E066B5001F60D8 /* UsersRelatedService.swift */,
+				9B543E1329E066C1001F60D8 /* RepositoriesService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,12 +277,15 @@
 				9B543DF729E05452001F60D8 /* RepositoryModel.swift in Sources */,
 				9B543DD629E042B3001F60D8 /* UsersListViewController.swift in Sources */,
 				9B543E0729E05FCF001F60D8 /* RequestError.swift in Sources */,
-				9B543E0D29E0614F001F60D8 /* SearchUsersEndpoint.swift in Sources */,
+				9B543E0D29E0614F001F60D8 /* UsersRelatedService.swift in Sources */,
 				9B543E0529E05F2E001F60D8 /* Endpoint.swift in Sources */,
 				9B543DEC29E04738001F60D8 /* RepositoryDetailsTVC.swift in Sources */,
+				9B543E1429E066C1001F60D8 /* RepositoriesService.swift in Sources */,
 				9B543E0F29E06232001F60D8 /* RepositoryEndpoint.swift in Sources */,
 				9B543DD229E042B3001F60D8 /* AppDelegate.swift in Sources */,
 				9B543DF429E04FD0001F60D8 /* Identifiable.swift in Sources */,
+				9B543E1229E066B5001F60D8 /* UsersRelatedService.swift in Sources */,
+				9B543E1629E06875001F60D8 /* GHUserModel.swift in Sources */,
 				9B543DE629E04453001F60D8 /* UserDetailsViewController.swift in Sources */,
 				9B543DD429E042B3001F60D8 /* SceneDelegate.swift in Sources */,
 				9B543E0929E0600D001F60D8 /* NetworkClient.swift in Sources */,
