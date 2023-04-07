@@ -10,6 +10,7 @@ import UIKit
 class UsersListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
 
 
     //MARK: -
@@ -49,7 +50,10 @@ extension UsersListViewController: UITableViewDataSource {
 extension UsersListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: -- navigation
         
+//        let detailsVC = UserDetailsViewController()
+//        self.navigationController?.show(detailsVC, sender: nil)
     }
     
 }

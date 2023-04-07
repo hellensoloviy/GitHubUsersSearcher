@@ -10,6 +10,7 @@ import UIKit
 class UserDetailsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
 
 
