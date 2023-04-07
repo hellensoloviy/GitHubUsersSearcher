@@ -25,10 +25,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Hellen Soloviy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFv-8C-PmE">
+                                <rect key="frame" x="131.66666666666666" y="797" width="129.99999999999997" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Ajx-bl-mDU"/>
+                                    <constraint firstAttribute="height" constant="21" id="IHf-Nv-Hr8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="UFv-8C-PmE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4kX-5W-ClM"/>
+                            <constraint firstItem="UFv-8C-PmE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BGc-zX-Bor"/>
                             <constraint firstItem="Z5n-mE-XIS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JC8-LO-n4J"/>
                             <constraint firstItem="Z5n-mE-XIS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vDL-U8-g4t"/>
                         </constraints>

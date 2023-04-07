@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchUsersViewController: UIViewController {
+class UsersListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -17,13 +17,18 @@ class SearchUsersViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        tableView.register(UserTVC.self, forCellReuseIdentifier: UserTVC().identifier)
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
 
 }
 
 //MARK: - Search Bar Delegate
-extension SearchUsersViewController: UITableViewDataSource {
+extension UsersListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -41,14 +46,27 @@ extension SearchUsersViewController: UITableViewDataSource {
 }
 
 //MARK: - Search Bar Delegate
-extension SearchUsersViewController: UITableViewDelegate {
+extension UsersListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     
 }
 
 //MARK: - Search Bar Delegate
-extension SearchUsersViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+extension UsersListViewController: UISearchBarDelegate {
 
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
     }
 }
 

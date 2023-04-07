@@ -13,6 +13,14 @@ class UserTVC: UITableViewCell {
     @IBOutlet weak var repositoriesCountLabel: UILabel!
     @IBOutlet weak var avatar: UIImageView!
     
+    // MARK: -
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
     
+//    func bindModel(_ model: UserModel) {
+//        // TODO: -- bind data
+//    }
 }
 

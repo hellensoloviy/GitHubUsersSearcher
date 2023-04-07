@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class RepositoryModel {
+    
+    var starsCount: String?
+    var forksCount: String?
+    var name: String?
+
+}

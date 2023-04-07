@@ -13,5 +13,13 @@ class RepositoryDetailsTVC: UITableViewCell {
     @IBOutlet weak var forksCountLabel: UILabel!
     @IBOutlet weak var starsCountLabel: UILabel!
 
+    // MARK: -
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
     
+    func bindRepositoryModel(_ model: RepositoryModel) {
+        // TODO: -- bind data
+    }
 }
