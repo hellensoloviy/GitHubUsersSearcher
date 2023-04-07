@@ -56,7 +56,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SyE-hx-sVy">
                                                     <rect key="frame" x="20" y="8.0000000000000036" width="353" height="50.333333333333343"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-Gb-f52">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github-mark" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-Gb-f52">
                                                             <rect key="frame" x="0.0" y="0.0" width="50.333333333333336" height="50.333333333333336"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" secondItem="Obl-Gb-f52" secondAttribute="height" multiplier="1:1" id="yuf-Ke-F2h"/>
@@ -272,6 +272,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="github-mark" width="120" height="120"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

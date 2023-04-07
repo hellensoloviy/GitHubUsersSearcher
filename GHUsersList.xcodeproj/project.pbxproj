@@ -26,7 +26,7 @@
 		9B543DD329E042B3001F60D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9B543DD529E042B3001F60D8 /* UsersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewController.swift; sourceTree = "<group>"; };
 		9B543DD829E042B3001F60D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9B543DDA29E042B5001F60D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9B543DDA29E042B5001F60D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		9B543DDD29E042B5001F60D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B543DDF29E042B5001F60D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B543DE529E04453001F60D8 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 				9B543DF229E04FC1001F60D8 /* Common */,
 				9B543DE729E0448F001F60D8 /* Controllers */,
 				9B543DF029E04A32001F60D8 /* Storyboards */,
-				9B543DF129E04A3E001F60D8 /* Resources */,
 				9B543DDF29E042B5001F60D8 /* Info.plist */,
+				9B543DDA29E042B5001F60D8 /* Assets.xcassets */,
 			);
 			path = GHUsersList;
 			sourceTree = "<group>";
@@ -128,14 +128,6 @@
 				9B543DDC29E042B5001F60D8 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		9B543DF129E04A3E001F60D8 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9B543DDA29E042B5001F60D8 /* Assets.xcassets */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		9B543DF229E04FC1001F60D8 /* Common */ = {
