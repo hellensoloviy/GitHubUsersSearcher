@@ -44,6 +44,12 @@ class UserTVC: UITableViewCell {
             self.model?.reposCount = value.reposCount
             self.model?.email = value.email
             self.model?.avatarURL = value.avatarURL
+            self.model?.about = value.about
+            self.model?.location = value.location
+            self.model?.joinedDate = value.joinedDate
+            
+            self.model?.followers = value.followers
+            self.model?.following = value.following
         }.store(in: &cancellable)
         
         

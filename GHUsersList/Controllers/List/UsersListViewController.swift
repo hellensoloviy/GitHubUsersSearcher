@@ -88,7 +88,7 @@ class UsersListViewController: UIViewController {
 
 }
 
-//MARK: - Search Bar Delegate
+//MARK: - TableView DataSource
 extension UsersListViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -115,7 +115,7 @@ extension UsersListViewController: UITableViewDataSource {
     
 }
 
-//MARK: - Table View Delegate
+//MARK: - TableView Delegate
 extension UsersListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

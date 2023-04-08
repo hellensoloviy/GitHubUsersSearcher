@@ -241,53 +241,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6EC08658-3EBE-4307-8078-F1193FEEAA3E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GHUsersList/Controllers/List/Cells/UserTVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "bindModel(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6EC08658-3EBE-4307-8078-F1193FEEAA3E - c36c4561a1d4b2d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Combine.Subscribers.Completion&lt;GHUsersList.RequestError&gt;) -&gt; () in GHUsersList.UserTVC.bindModel(GHUsersList.DetailedUserModel) -&gt; ()"
-                  moduleName = "GHUsersList"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Controllers/List/Cells/UserTVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "472">
-               </Location>
-               <Location
-                  uuid = "6EC08658-3EBE-4307-8078-F1193FEEAA3E - c36c4561a1d4b2d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Combine.Subscribers.Completion&lt;GHUsersList.RequestError&gt;) -&gt; () in GHUsersList.UserTVC.bindModel(GHUsersList.DetailedUserModel) -&gt; ()"
-                  moduleName = "GHUsersList"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Controllers/List/Cells/UserTVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "38"
-                  endingLineNumber = "38"
-                  offsetFromSymbolStart = "105">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

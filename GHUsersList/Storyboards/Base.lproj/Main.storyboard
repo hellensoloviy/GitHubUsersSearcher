@@ -32,7 +32,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="zK5-fw-Uij">
+                            <searchBar contentMode="redraw" placeholder="Search for Users" translatesAutoresizingMaskIntoConstraints="NO" id="zK5-fw-Uij">
                                 <rect key="frame" x="0.0" y="103" width="393" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="JS8-vp-nFa"/>
@@ -155,7 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nPA-nM-tiP">
-                                <rect key="frame" x="0.0" y="258" width="393" height="560"/>
+                                <rect key="frame" x="0.0" y="353" width="393" height="465"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryDetailsTVC" id="Cg4-Sc-9xA" customClass="RepositoryDetailsTVC" customModule="GHUsersList" customModuleProvider="target">
@@ -244,13 +244,13 @@
                                     <outlet property="delegate" destination="ueW-hf-gYp" id="OZ2-ae-epQ"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHY-O0-ifg">
-                                <rect key="frame" x="0.0" y="59" width="393" height="155"/>
+                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="CHY-O0-ifg" customClass="ProfileHeaderView" customModule="GHUsersList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="59" width="393" height="250"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="github-mark" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoQ-Hg-FcZ">
-                                        <rect key="frame" x="36" y="22" width="50.333333333333343" height="80"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github-mark" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eoQ-Hg-FcZ">
+                                        <rect key="frame" x="20" y="20" width="161.66666666666666" height="161.66666666666666"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50.329999999999998" id="IF2-ji-aa8"/>
+                                            <constraint firstAttribute="width" secondItem="eoQ-Hg-FcZ" secondAttribute="height" multiplier="1:1" id="o7T-Df-CNr"/>
                                             <constraint firstAttribute="width" secondItem="eoQ-Hg-FcZ" secondAttribute="height" multiplier="1:1" id="zow-yn-d0o"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -260,16 +260,105 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.clipToBounds" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ok8-ta-xcf">
+                                        <rect key="frame" x="211.66666666666663" y="19.666666666666671" width="161.33333333333337" height="162"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5J9-Ea-umG" userLabel="username">
+                                                <rect key="frame" x="0.0" y="0.0" width="161.33333333333334" height="20.333333333333332"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLv-WM-bUv" userLabel="email">
+                                                <rect key="frame" x="0.0" y="28.333333333333329" width="161.33333333333334" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mm-WF-a41" userLabel="location">
+                                                <rect key="frame" x="0.0" y="56.666666666666679" width="161.33333333333334" height="20.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDJ-OP-cuB" userLabel="joinDate">
+                                                <rect key="frame" x="0.0" y="84.999999999999986" width="161.33333333333334" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="xXR-ag-FgQ" userLabel="followers">
+                                                <rect key="frame" x="0.0" y="113.33333333333333" width="161.33333333333334" height="20.333333333333329"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="0" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIU-pW-kcf" userLabel="Following">
+                                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocq-gb-HsN" userLabel="Followers">
+                                                        <rect key="frame" x="20" y="0.0" width="141.33333333333334" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0Qi-AV-RM1" userLabel="following">
+                                                <rect key="frame" x="0.0" y="141.66666666666669" width="161.33333333333334" height="20.333333333333343"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Dw-fx-IFu" userLabel="Following">
+                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="20.333333333333332"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="7JG-Rn-OCR"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swD-4B-eD9" userLabel="Followers">
+                                                        <rect key="frame" x="82.000000000000028" y="0.0" width="79.333333333333343" height="20.333333333333332"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVr-lf-YgT">
+                                        <rect key="frame" x="20" y="212" width="353" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="eoQ-Hg-FcZ" firstAttribute="width" secondItem="eoQ-Hg-FcZ" secondAttribute="height" multiplier="1:1" id="1ge-hd-Ia2"/>
-                                    <constraint firstAttribute="height" constant="155" id="9Qg-q3-jkX"/>
-                                    <constraint firstItem="eoQ-Hg-FcZ" firstAttribute="leading" secondItem="CHY-O0-ifg" secondAttribute="leading" constant="36" id="Ebw-VN-cko"/>
+                                    <constraint firstAttribute="height" constant="250" id="9Qg-q3-jkX"/>
+                                    <constraint firstItem="eoQ-Hg-FcZ" firstAttribute="leading" secondItem="CHY-O0-ifg" secondAttribute="leading" constant="20" symbolic="YES" id="Ebw-VN-cko"/>
+                                    <constraint firstItem="NVr-lf-YgT" firstAttribute="leading" secondItem="CHY-O0-ifg" secondAttribute="leading" constant="20" symbolic="YES" id="Faa-ZI-2aE"/>
+                                    <constraint firstAttribute="trailing" secondItem="ok8-ta-xcf" secondAttribute="trailing" constant="20" symbolic="YES" id="Hc3-se-SoI"/>
+                                    <constraint firstItem="ok8-ta-xcf" firstAttribute="width" secondItem="eoQ-Hg-FcZ" secondAttribute="width" multiplier="1:1" id="N3s-iy-JRb"/>
+                                    <constraint firstAttribute="bottom" secondItem="NVr-lf-YgT" secondAttribute="bottom" constant="20" symbolic="YES" id="a5o-iZ-hzV"/>
+                                    <constraint firstAttribute="trailing" secondItem="NVr-lf-YgT" secondAttribute="trailing" constant="20" symbolic="YES" id="fQ6-dF-FW0"/>
+                                    <constraint firstItem="ok8-ta-xcf" firstAttribute="leading" secondItem="eoQ-Hg-FcZ" secondAttribute="trailing" constant="30" id="kKZ-Zx-0hL"/>
+                                    <constraint firstItem="eoQ-Hg-FcZ" firstAttribute="top" secondItem="CHY-O0-ifg" secondAttribute="top" constant="20" id="wNH-hP-eyy"/>
+                                    <constraint firstItem="ok8-ta-xcf" firstAttribute="centerY" secondItem="eoQ-Hg-FcZ" secondAttribute="centerY" id="y4h-B9-WXb"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="avatar" destination="eoQ-Hg-FcZ" id="dUF-1a-gfJ"/>
+                                    <outlet property="bio" destination="NVr-lf-YgT" id="M8S-Pj-pby"/>
+                                    <outlet property="email" destination="rLv-WM-bUv" id="jja-Iv-n8u"/>
+                                    <outlet property="followingCount" destination="swD-4B-eD9" id="bra-Yt-q4J"/>
+                                    <outlet property="follwersCount" destination="DIU-pW-kcf" id="Vem-TR-l5V"/>
+                                    <outlet property="joinedDate" destination="HDJ-OP-cuB" id="uVR-gA-P1B"/>
+                                    <outlet property="location" destination="9mm-WF-a41" id="v0J-dc-e0b"/>
+                                    <outlet property="username" destination="5J9-Ea-umG" id="VNc-eW-hdh"/>
+                                </connections>
                             </view>
-                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="pJe-CW-kuu">
-                                <rect key="frame" x="0.0" y="214" width="393" height="44"/>
+                            <searchBar contentMode="redraw" text="" placeholder="Search for Users's Repositories" translatesAutoresizingMaskIntoConstraints="NO" id="pJe-CW-kuu">
+                                <rect key="frame" x="0.0" y="309" width="393" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="SGg-TL-nX6"/>
                                     <constraint firstAttribute="height" constant="44" id="hOh-XO-8J9"/>
@@ -299,6 +388,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="GitHub Searcher" id="ofj-pa-6gE"/>
                     <connections>
+                        <outlet property="headerView" destination="CHY-O0-ifg" id="ebv-lS-ItE"/>
                         <outlet property="tableView" destination="nPA-nM-tiP" id="pQ8-hD-Ggu"/>
                     </connections>
                 </viewController>
