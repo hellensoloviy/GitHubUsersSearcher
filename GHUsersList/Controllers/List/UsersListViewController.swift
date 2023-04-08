@@ -78,9 +78,6 @@ class UsersListViewController: UIViewController {
         }.store(in: &subscriptions)
     }
     
-    private func getDetailedUsersData() {
-    }
-    
     private func handleError(message: String? = nil) {
         self.showError(with: message)
         self.dataSource = nil

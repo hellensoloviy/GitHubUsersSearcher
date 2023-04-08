@@ -10,6 +10,13 @@ import UIKit
 import Combine
 
 class ProfileHeaderView: UIView {
+    enum Constants {
+        static let followers = "Followers"
+        static let following = "Following"
+        
+        static let defaultBio = "No Bio to show"
+        static let unknownDate = "Unknown Date"
+    }
     
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var location: UILabel!
@@ -41,24 +48,24 @@ class ProfileHeaderView: UIView {
         self.email.text = model.email
         
         if let count = model.following {
-            self.followingCount.text = "\(count)"
+            self.followingCount.text = "\(Constants.following) \(count)"
         } else {
-            self.followingCount.text = "0"
+            self.followingCount.text = "\(Constants.following) 0"
         }
         
         if let count = model.followers {
-            self.follwersCount.text = "\(count)"
+            self.follwersCount.text = "\(count) \(Constants.followers)"
         } else {
-            self.follwersCount.text = "0"
+            self.follwersCount.text = "0 \(Constants.followers)"
         }
         
         if let dateString = model.joinedDate, let date = CustomDateFormatter().stringToDate(dateString) {
             self.joinedDate.text = date
         } else {
-            self.joinedDate.text = "Unknown Date"
+            self.joinedDate.text = Constants.unknownDate
         }
         
-        self.bio.text = model.about ?? "No Bio to show"
+        self.bio.text = model.about ?? Constants.defaultBio
         
         if let string = model.avatarURL, let url = URL(string: string)  {
             self.cancellable = URLSession.shared

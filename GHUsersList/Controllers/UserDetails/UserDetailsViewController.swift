@@ -13,6 +13,7 @@ class UserDetailsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: ProfileHeaderView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
 
     var userModel: DetailedUserModel? = nil
     var repositoriesList: [RepositoryModel]? = nil {
@@ -22,7 +23,9 @@ class UserDetailsViewController: UIViewController {
             }
         }
     }
+
     
+    @Published var isActionInProgress: Bool = false
     private var subscriptions = Set<AnyCancellable>()
 
     //MARK: -
@@ -42,7 +45,6 @@ class UserDetailsViewController: UIViewController {
         
         if let userModel = userModel {
             RepositoriesService().repositories(for: userModel.username).sink { error in
-                
                 switch error {
                 case let .failure(error):
                     print("Couldn't get users: \(error)")
@@ -51,9 +53,21 @@ class UserDetailsViewController: UIViewController {
                 }
 
             } receiveValue: { responseList in
+                self.userModel?.repositories = responseList
                 self.repositoriesList = responseList
             }.store(in: &subscriptions)
         }
+        
+        $isActionInProgress
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] new in
+                
+                DispatchQueue.main.async {
+                    self?.spinner.isHidden = !new
+                    self?.tableView.isHidden = new
+                    new ? self?.spinner.startAnimating() : self?.spinner.stopAnimating()
+                }
+        }.store(in: &subscriptions)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +85,13 @@ class UserDetailsViewController: UIViewController {
         guard let model = userModel else { return }
         headerView.setupView(with: model)
         view.updateConstraints()
+    }
+    
+    private func search(for keyword: String = "") {
+        isActionInProgress = true
+        let result = self.userModel?.repositories?.filter({ $0.name?.uppercased().contains(keyword.uppercased()) ?? false })
+        self.repositoriesList = result
+        isActionInProgress = false
     }
 }
 
@@ -108,11 +129,13 @@ extension UserDetailsViewController: UITableViewDelegate {
 
 //MARK: - Search Bar Delegate
 extension UserDetailsViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-//        if searchText.isEmpty {
-//        } else {
-//            search(for: searchText)
-//        }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.repositoriesList = self.userModel?.repositories
+            isActionInProgress = false
+        } else {
+            search(for: searchText)
+        }
     }
 }
 
