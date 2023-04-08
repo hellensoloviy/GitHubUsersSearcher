@@ -9,11 +9,11 @@ import Foundation
 
 class RepositoryModel: Codable {
     
-    var starsCount: String?
-    var forksCount: String?
+    var starsCount: Int = 0
+    var forksCount: Int = 0
     var name: String?
-    var url: String?
-    var id: String
+    var url: String
+    var id: Int
     
     enum CodingKeys: String, CodingKey {
         case id

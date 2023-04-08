@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Combine
 
 class ProfileHeaderView: UIView {
     
@@ -20,6 +21,7 @@ class ProfileHeaderView: UIView {
     
     @IBOutlet weak var avatar: UIImageView!
     private var model: DetailedUserModel? = nil
+    private var cancellable: AnyCancellable? = nil
     
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -58,6 +60,14 @@ class ProfileHeaderView: UIView {
         
         self.bio.text = model.about ?? "No Bio to show"
         
+        if let string = model.avatarURL, let url = URL(string: string)  {
+            self.cancellable = URLSession.shared
+                .downloadTaskPublisher(for: url)
+                .map { UIImage(contentsOfFile: $0.url.path)! }
+                .receive(on: DispatchQueue.main)
+                .replaceError(with: UIImage(named: "github-mark-white")) // white so we see when not loaded
+                .assign(to: \.image, on: self.avatar)
+        }
         
     }
     

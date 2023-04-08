@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class UserDetailsViewController: UIViewController {
     static let id = "UserDetailsViewController"
@@ -21,6 +22,8 @@ class UserDetailsViewController: UIViewController {
             }
         }
     }
+    
+    private var subscriptions = Set<AnyCancellable>()
 
     //MARK: -
     init?(userModel: DetailedUserModel, coder: NSCoder) {
@@ -36,11 +39,25 @@ class UserDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+        
+        if let userModel = userModel {
+            RepositoriesService().repositories(for: userModel.username).sink { error in
+                
+                switch error {
+                case let .failure(error):
+                    print("Couldn't get users: \(error)")
+                    self.showError(with: error.customMessage)
+                case .finished: break
+                }
+
+            } receiveValue: { responseList in
+                self.repositoriesList = responseList
+            }.store(in: &subscriptions)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         setupUI()
     }
     
@@ -69,6 +86,15 @@ extension UserDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let model = repositoriesList?[indexPath.row] else {
+            return UITableViewCell()
+        }
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: RepositoryDetailsTVC().identifier) as? RepositoryDetailsTVC {
+            cell.bindRepositoryModel(model)
+            return cell
+        }
+        
         return UITableViewCell()
     }
     
@@ -83,7 +109,10 @@ extension UserDetailsViewController: UITableViewDelegate {
 //MARK: - Search Bar Delegate
 extension UserDetailsViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-
+//        if searchText.isEmpty {
+//        } else {
+//            search(for: searchText)
+//        }
     }
 }
 

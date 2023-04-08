@@ -66,9 +66,9 @@ class UsersListViewController: UIViewController {
             }
             self.isLoading = false
             
-        } receiveValue: { [self] value in
+        } receiveValue: { value in
             
-            userModel = value
+            self.userModel = value
             if let users = value.users {
                 self.dataSource = users
             } else {

@@ -16,10 +16,14 @@ class RepositoryDetailsTVC: UITableViewCell {
     // MARK: -
     override func prepareForReuse() {
         super.prepareForReuse()
-        
+        forksCountLabel.text = "0"
+        starsCountLabel.text = "0"
+        nameLabel.text = "0"
     }
     
     func bindRepositoryModel(_ model: RepositoryModel) {
-        // TODO: -- bind data
+        self.forksCountLabel.text = "\(model.forksCount)"
+        self.starsCountLabel.text = "\(model.starsCount)"
+        self.nameLabel.text = model.name
     }
 }

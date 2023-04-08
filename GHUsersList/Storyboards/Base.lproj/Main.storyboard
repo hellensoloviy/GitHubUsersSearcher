@@ -177,10 +177,10 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ocz-bs-sKS">
                                                             <rect key="frame" x="0.0" y="0.0" width="78" height="20.666666666666668"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qke-eE-FjZ">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qke-eE-FjZ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="28" height="20.666666666666668"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="28" id="Vt3-He-Mhg"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28" id="Vt3-He-Mhg"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -200,10 +200,10 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cOx-NI-15e">
                                                             <rect key="frame" x="0.0" y="20.666666666666664" width="78" height="20.333333333333336"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcp-i4-f7u">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcp-i4-f7u">
                                                                     <rect key="frame" x="0.0" y="0.0" width="28" height="20.333333333333332"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="28" id="GuJ-Lm-oAV"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="28" id="GuJ-Lm-oAV"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
@@ -234,6 +234,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="forksCountLabel" destination="qke-eE-FjZ" id="4Rc-cM-0fV"/>
                                             <outlet property="nameLabel" destination="JH5-Ob-Zq5" id="Kvh-RK-H0x"/>
                                             <outlet property="starsCountLabel" destination="Lcp-i4-f7u" id="uUk-Ws-ctg"/>
                                         </connections>
