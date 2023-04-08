@@ -42,6 +42,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="lHu-Ci-XSX"/>
                                 </connections>
                             </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="JIC-Qs-REq">
+                                <rect key="frame" x="178" y="464" width="37" height="37"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-ue-iZ2">
                                 <rect key="frame" x="0.0" y="147" width="393" height="671"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -120,13 +123,16 @@
                             <constraint firstItem="zK5-fw-Uij" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Adn-GO-mKb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9TG-ue-iZ2" secondAttribute="bottom" id="FpX-3D-BBx"/>
                             <constraint firstItem="zK5-fw-Uij" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MEx-fx-2tm"/>
+                            <constraint firstItem="JIC-Qs-REq" firstAttribute="centerY" secondItem="9TG-ue-iZ2" secondAttribute="centerY" id="TCe-2v-agF"/>
                             <constraint firstItem="zK5-fw-Uij" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UyT-Te-H1Q"/>
                             <constraint firstItem="9TG-ue-iZ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gNN-WT-JIH"/>
+                            <constraint firstItem="JIC-Qs-REq" firstAttribute="centerX" secondItem="9TG-ue-iZ2" secondAttribute="centerX" id="h5M-3c-ghL"/>
                             <constraint firstItem="9TG-ue-iZ2" firstAttribute="top" secondItem="zK5-fw-Uij" secondAttribute="bottom" id="vKB-F1-owM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="GitHub Searcher" id="dzb-dv-TKf"/>
                     <connections>
+                        <outlet property="spinner" destination="JIC-Qs-REq" id="8Wx-gJ-MhH"/>
                         <outlet property="tableView" destination="9TG-ue-iZ2" id="yN8-Of-wOm"/>
                     </connections>
                 </viewController>

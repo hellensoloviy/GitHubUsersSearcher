@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import Combine
 
 protocol UsersRelatedServicable {
-    func searchUsers(for keyword: String) async -> Result<[GHUserModel], RequestError>
+    func searchUsers(for keyword: String) -> AnyPublisher<UsersModel, RequestError>
 }
 
 struct UsersRelatedService: NetworkClient, UsersRelatedServicable {
-    func searchUsers(for keyword: String) async -> Result<[GHUserModel], RequestError> {
-        return await sendRequest(endpoint: UsersRelatedEndpoints.searchUser(name: keyword), responseModel: [GHUserModel].self)
+    func searchUsers(for keyword: String) -> AnyPublisher<UsersModel, RequestError> {
+        return sendRequest(endpoint: UsersRelatedEndpoints.searchUser(name: keyword), responseModel: UsersModel.self)
     }
 }

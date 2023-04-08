@@ -27,6 +27,8 @@
 		9B543E1629E06875001F60D8 /* GHUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E1529E06875001F60D8 /* GHUserModel.swift */; };
 		9B543E1729E07BD9001F60D8 /* UsersRelatedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E1129E066B5001F60D8 /* UsersRelatedService.swift */; };
 		9B543E1929E080A9001F60D8 /* UsersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E1829E080A9001F60D8 /* UsersModel.swift */; };
+		9B543E1B29E14A95001F60D8 /* UIViewController+Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E1A29E14A95001F60D8 /* UIViewController+Alertable.swift */; };
+		9B543E1D29E14CB1001F60D8 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E1C29E14CB1001F60D8 /* SpinnerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		9B543E1329E066C1001F60D8 /* RepositoriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesService.swift; sourceTree = "<group>"; };
 		9B543E1529E06875001F60D8 /* GHUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GHUserModel.swift; sourceTree = "<group>"; };
 		9B543E1829E080A9001F60D8 /* UsersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersModel.swift; sourceTree = "<group>"; };
+		9B543E1A29E14A95001F60D8 /* UIViewController+Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alertable.swift"; sourceTree = "<group>"; };
+		9B543E1C29E14CB1001F60D8 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 			isa = PBXGroup;
 			children = (
 				9B543DF329E04FD0001F60D8 /* Identifiable.swift */,
+				9B543E1A29E14A95001F60D8 /* UIViewController+Alertable.swift */,
+				9B543E1C29E14CB1001F60D8 /* SpinnerViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -280,7 +286,9 @@
 				9B543DF729E05452001F60D8 /* RepositoryModel.swift in Sources */,
 				9B543DD629E042B3001F60D8 /* UsersListViewController.swift in Sources */,
 				9B543E0729E05FCF001F60D8 /* RequestError.swift in Sources */,
+				9B543E1B29E14A95001F60D8 /* UIViewController+Alertable.swift in Sources */,
 				9B543E0D29E0614F001F60D8 /* UsersRelatedEndpoints.swift in Sources */,
+				9B543E1D29E14CB1001F60D8 /* SpinnerViewController.swift in Sources */,
 				9B543E0529E05F2E001F60D8 /* Endpoint.swift in Sources */,
 				9B543DEC29E04738001F60D8 /* RepositoryDetailsTVC.swift in Sources */,
 				9B543E1429E066C1001F60D8 /* RepositoriesService.swift in Sources */,

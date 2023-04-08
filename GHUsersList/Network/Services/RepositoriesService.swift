@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import Combine
 
 protocol RepositoriesServicable {
-    func repositories(for username: String) async -> Result<[RepositoryModel], RequestError>
+    func repositories(for username: String) -> AnyPublisher<[RepositoryModel], RequestError>
 }
 
 struct RepositoriesService: NetworkClient, RepositoriesServicable {
-    func repositories(for username: String) async -> Result<[RepositoryModel], RequestError> {
-        return await sendRequest(endpoint: RepositoryEndpoint.reposForUser(username: username), responseModel: [RepositoryModel].self)
+    func repositories(for username: String) -> AnyPublisher<[RepositoryModel], RequestError> {
+        return sendRequest(endpoint: RepositoryEndpoint.reposForUser(username: username), responseModel: [RepositoryModel].self)
     }
 }

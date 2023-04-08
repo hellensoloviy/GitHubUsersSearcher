@@ -6,17 +6,26 @@
 //
 
 import UIKit
+import Combine
 
 class UsersListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
 
     private var dataSource: [GHUserModel]? = nil {
         didSet {
-            tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
+    private var cancellable: AnyCancellable?
+    
+    @Published private var isLoading: Bool = false
+    
+    private var subscriptions = Set<AnyCancellable>()
 
     //MARK: -
     override func viewDidLoad() {
@@ -28,24 +37,70 @@ class UsersListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let serive = UsersRelatedService()
-        Task(priority: .background) {
-        let result = await serive.searchUsers(for: "hellen")
-          switch result {
-          case .success(let response):
-              
-              print("---- response \(response)")
-              dataSource = response
-              
-          case .failure(let error):
-              print("---- Errror \(error)")
-          }
-        }
+        cancellable = $isLoading.sink(receiveValue: { [weak self] new in
+            guard new != self?.isLoading else { return }
+
+            DispatchQueue.main.async {
+                self?.spinner.isHidden = !new
+                self?.tableView.isHidden = new
+                new ? self?.spinner.startAnimating() : self?.spinner.stopAnimating()
+            }
+        })
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+    }
+    
+    //MARK: - Private
+    private func search(for keyword: String = "") {
+        isLoading = true
+        UsersRelatedService().searchUsers(for: keyword).sink { error in
+            
+            switch error {
+            case let .failure(error):
+                print("Couldn't get users: \(error)")
+                self.handleError(message: error.customMessage)
+            case .finished: break
+            }
+            self.isLoading = false
+            
+        } receiveValue: { [self] value in
+            
+            if let users = value.users {
+                self.dataSource = users
+            } else {
+                self.dataSource = nil
+            }
+            self.isLoading = false
+        }.store(in: &subscriptions)
+    }
+    
+    private func handleError(message: String? = nil) {
+        self.showError(with: message)
+        self.dataSource = nil
+    }
+    
+    private func createSpinnerView() {
+        let child = SpinnerViewController()
+
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+
+        cancellable = $isLoading.sink(receiveValue: { [weak self] new in
+            guard new != self?.isLoading else { return }
+            if new {
+                DispatchQueue.main.async {
+                    child.willMove(toParent: nil)
+                    child.view.removeFromSuperview()
+                    child.removeFromParent()
+                }
+            }
+            self?.cancellable = nil
+           })
     }
 
 }
@@ -101,7 +156,7 @@ extension UsersListViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        search(for: searchText)
     }
 }
 
