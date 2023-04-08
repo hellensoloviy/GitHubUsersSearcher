@@ -21,6 +21,8 @@ extension RepositoryEndpoint: Endpoint {
             return "/users/\(username)/repos"
         }
     }
+    
+    var queryItems: [URLQueryItem]? { return nil }
 
     var method: RequestMethod {
         switch self {

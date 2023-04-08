@@ -22,15 +22,16 @@ protocol Endpoint {
     var method: RequestMethod { get }
     var header: [String: String]? { get }
     var body: [String: String]? { get }
+    var queryItems: [URLQueryItem]? { get }
 }
 
 extension Endpoint {
     var scheme: String {
-        return "https:"
+        return "https"
     }
 
     var host: String {
-        return "//developer.github.com/v3/"
+        return "api.github.com"    //"://developer.github.com/v3"
     }
     
     var header: [String: String]? {

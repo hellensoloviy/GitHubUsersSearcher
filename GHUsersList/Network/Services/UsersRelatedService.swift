@@ -7,12 +7,12 @@
 
 import Foundation
 
-//protocol UsersRelatedService {
-//    func searchUsers(for keyword: String) async -> Result<RepositoryModel, RequestError>
-//}
-//
-//struct UsersRelatedService: NetworkClient, RepositoriesService {
-//    func searchUsers(for keyword: String) async -> Result<[RepositoryModel], RequestError> {
-//        return await sendRequest(endpoint: UsersRelatedEndpoints.searchUser(keyword), responseModel: Movie.self)
-//    }
-//}
+protocol UsersRelatedServicable {
+    func searchUsers(for keyword: String) async -> Result<[GHUserModel], RequestError>
+}
+
+struct UsersRelatedService: NetworkClient, UsersRelatedServicable {
+    func searchUsers(for keyword: String) async -> Result<[GHUserModel], RequestError> {
+        return await sendRequest(endpoint: UsersRelatedEndpoints.searchUser(name: keyword), responseModel: [GHUserModel].self)
+    }
+}

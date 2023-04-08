@@ -13,6 +13,6 @@ protocol Identifiable {
 }
 
 extension UITableViewCell: Identifiable {
-    var identifier: String { String(describing: self) }
+    var identifier: String { "\(type(of: self))" }
 }
 

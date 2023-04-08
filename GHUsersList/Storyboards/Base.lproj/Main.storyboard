@@ -46,7 +46,7 @@
                                 <rect key="frame" x="0.0" y="147" width="393" height="671"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="shp-sE-52y">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UserTVC" id="shp-sE-52y" customClass="UserTVC" customModule="GHUsersList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="66.333335876464844"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="shp-sE-52y" id="CJk-iS-I9n">
@@ -100,6 +100,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="avatar" destination="Obl-Gb-f52" id="rTd-Mi-bZl"/>
+                                            <outlet property="repositoriesCountLabel" destination="ri3-Hs-ysy" id="08g-Sd-jwn"/>
+                                            <outlet property="userNameLabel" destination="14X-O7-p03" id="Vhp-7h-C97"/>
                                             <segue destination="ueW-hf-gYp" kind="show" id="mFJ-a9-zm7"/>
                                         </connections>
                                     </tableViewCell>
@@ -143,7 +146,7 @@
                                 <rect key="frame" x="0.0" y="302" width="393" height="516"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Cg4-Sc-9xA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepositoryDetailsTVC" id="Cg4-Sc-9xA" customClass="RepositoryDetailsTVC" customModule="GHUsersList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cg4-Sc-9xA" id="Kbq-VR-g5N">
@@ -218,6 +221,10 @@
                                                 <constraint firstItem="u4y-zS-Gyg" firstAttribute="centerY" secondItem="Kbq-VR-g5N" secondAttribute="centerY" id="udm-IQ-NJ6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="JH5-Ob-Zq5" id="Kvh-RK-H0x"/>
+                                            <outlet property="starsCountLabel" destination="Lcp-i4-f7u" id="uUk-Ws-ctg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

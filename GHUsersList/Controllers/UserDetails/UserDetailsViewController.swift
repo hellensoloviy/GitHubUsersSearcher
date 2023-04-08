@@ -12,21 +12,20 @@ class UserDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-
+    var userModel: GHUserModel? = nil
+    var repositoriesList: [RepositoryModel]? = nil
 
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
-        tableView.register(UserTVC.self, forCellReuseIdentifier: UserTVC().identifier)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
     }
-
 
 }
 
@@ -38,7 +37,7 @@ extension UserDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return repositoriesList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

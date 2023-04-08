@@ -14,11 +14,18 @@ enum UsersRelatedEndpoints {
 extension UsersRelatedEndpoints: Endpoint {
     var path: String {
         switch self {
-        case .searchUser(let name):
-            return "search/users?q=\(name)"
+        case .searchUser:
+            return "/search/users"
         }
     }
 
+    var queryItems: [URLQueryItem]? {
+        switch self {
+        case .searchUser(let name):
+            return [.init(name: "q", value: name)]
+        }
+    }
+    
     var method: RequestMethod {
         switch self {
         case .searchUser:

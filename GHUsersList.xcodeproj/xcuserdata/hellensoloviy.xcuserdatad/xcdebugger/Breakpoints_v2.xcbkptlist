@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "008D4CDA-9982-417D-B34B-EE6C09D378AB"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "848DF868-2762-4ECB-9DC8-C30F548FAC11"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GHUsersList/Controllers/List/UsersListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BCE81CA3-4B70-4052-BF7A-E3D9B402C753"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GHUsersList/Network/Common/NetworkClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "sendRequest(endpoint:responseModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BCE81CA3-4B70-4052-BF7A-E3D9B402C753 - 23deb72ca46c191f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GHUsersList.NetworkClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: GHUsersList.Endpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, GHUsersList.RequestError&gt;"
+                  moduleName = "GHUsersList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Network/Common/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "2505">
+               </Location>
+               <Location
+                  uuid = "BCE81CA3-4B70-4052-BF7A-E3D9B402C753 - 23deb72ca46c191f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GHUsersList.NetworkClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: GHUsersList.Endpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, GHUsersList.RequestError&gt;"
+                  moduleName = "GHUsersList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Network/Common/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "3467">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9092702-8182-482F-8C56-444F61D66E79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GHUsersList/Network/Common/NetworkClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "sendRequest(endpoint:responseModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C9092702-8182-482F-8C56-444F61D66E79 - 23deb72ca46ce68b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GHUsersList.NetworkClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: GHUsersList.Endpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, GHUsersList.RequestError&gt;"
+                  moduleName = "GHUsersList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Network/Common/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1013">
+               </Location>
+               <Location
+                  uuid = "C9092702-8182-482F-8C56-444F61D66E79 - 23deb72ca46ce68b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GHUsersList.NetworkClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: GHUsersList.Endpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, GHUsersList.RequestError&gt;"
+                  moduleName = "GHUsersList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Network/Common/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "984">
+               </Location>
+               <Location
+                  uuid = "C9092702-8182-482F-8C56-444F61D66E79 - 23deb72ca46ce68b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GHUsersList.NetworkClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: GHUsersList.Endpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, GHUsersList.RequestError&gt;"
+                  moduleName = "GHUsersList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Network/Common/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "970">
+               </Location>
+               <Location
+                  uuid = "C9092702-8182-482F-8C56-444F61D66E79 - 23deb72ca46ce68b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GHUsersList.NetworkClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: GHUsersList.Endpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, GHUsersList.RequestError&gt;"
+                  moduleName = "GHUsersList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Network/Common/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "964">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6B66827-E8EA-4DCA-B278-35984F7AA9A3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GHUsersList/Network/Common/NetworkClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "sendRequest(endpoint:responseModel:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D6B66827-E8EA-4DCA-B278-35984F7AA9A3 - 23deb72ca46c19a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GHUsersList.NetworkClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: GHUsersList.Endpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, GHUsersList.RequestError&gt;"
+                  moduleName = "GHUsersList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Network/Common/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1501">
+               </Location>
+               <Location
+                  uuid = "D6B66827-E8EA-4DCA-B278-35984F7AA9A3 - 23deb72ca46c19a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GHUsersList.NetworkClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: GHUsersList.Endpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, GHUsersList.RequestError&gt;"
+                  moduleName = "GHUsersList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Network/Common/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "1475">
+               </Location>
+               <Location
+                  uuid = "D6B66827-E8EA-4DCA-B278-35984F7AA9A3 - 23deb72ca46c19dd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GHUsersList.NetworkClient.sendRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: GHUsersList.Endpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, GHUsersList.RequestError&gt;"
+                  moduleName = "GHUsersList"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hellensoloviy/Developer/swift/GHUsersList/GHUsersList/Network/Common/NetworkClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "3065">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

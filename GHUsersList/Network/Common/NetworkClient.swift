@@ -19,6 +19,7 @@ extension NetworkClient {
         urlComponents.scheme = endpoint.scheme
         urlComponents.host = endpoint.host
         urlComponents.path = endpoint.path
+        urlComponents.queryItems = endpoint.queryItems
         
         guard let url = urlComponents.url else {
             return .failure(.invalidURL)
@@ -39,10 +40,15 @@ extension NetworkClient {
             }
             switch response.statusCode {
             case 200...299:
-                guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
+                guard let decodedResponse = try? JSONDecoder().decode(UsersModel.self, from: data) else {
                     return .failure(.decode)
                 }
-                return .success(decodedResponse)
+                if let users = decodedResponse.users {
+                    return .success(users as! T)
+                } else {
+                    return .failure(.noResponse)
+                }
+                                
             case 401:
                 return .failure(.unauthorized)
             default:

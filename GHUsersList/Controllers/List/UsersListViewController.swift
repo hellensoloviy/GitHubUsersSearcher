@@ -12,13 +12,35 @@ class UsersListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
+    private var dataSource: [GHUserModel]? = nil {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
-        tableView.register(UserTVC.self, forCellReuseIdentifier: UserTVC().identifier)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let serive = UsersRelatedService()
+        Task(priority: .background) {
+        let result = await serive.searchUsers(for: "hellen")
+          switch result {
+          case .success(let response):
+              
+              print("---- response \(response)")
+              dataSource = response
+              
+          case .failure(let error):
+              print("---- Errror \(error)")
+          }
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -36,10 +58,19 @@ extension UsersListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dataSource?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let model = dataSource?[indexPath.row] else {
+            return UITableViewCell()
+        }
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: UserTVC().identifier) as? UserTVC {
+            cell.bindModel(model)
+            return cell
+        }
+        
         return UITableViewCell()
     }
     

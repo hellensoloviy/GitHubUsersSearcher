@@ -14,13 +14,14 @@ class UserTVC: UITableViewCell {
     @IBOutlet weak var avatar: UIImageView!
     
     // MARK: -
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-        
     }
     
-//    func bindModel(_ model: UserModel) {
-//        // TODO: -- bind data
-//    }
+    func bindModel(_ model: GHUserModel) {
+        userNameLabel.text = model.name
+        
+    }
 }
 
