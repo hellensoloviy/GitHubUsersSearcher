@@ -86,27 +86,6 @@ class UsersListViewController: UIViewController {
         self.showError(with: message)
         self.dataSource = nil
     }
-    
-    private func createSpinnerView() {
-        let child = SpinnerViewController()
-
-        addChild(child)
-        child.view.frame = view.frame
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
-
-        cancellable = $isLoading.sink(receiveValue: { [weak self] new in
-            guard new != self?.isLoading else { return }
-            if new {
-                DispatchQueue.main.async {
-                    child.willMove(toParent: nil)
-                    child.view.removeFromSuperview()
-                    child.removeFromParent()
-                }
-            }
-            self?.cancellable = nil
-           })
-    }
 
 }
 
