@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RepositoryModel: Codable {
+class RepositoryModel: Codable {
     
     var starsCount: String?
     var forksCount: String?

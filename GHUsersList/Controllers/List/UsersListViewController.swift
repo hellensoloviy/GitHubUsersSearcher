@@ -14,7 +14,8 @@ class UsersListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
 
-    private var dataSource: [GHUserModel]? = nil {
+    @Published private var userModel: UsersModel? = nil
+    private var dataSource: [DetailedUserModel]? = nil {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -24,7 +25,6 @@ class UsersListViewController: UIViewController {
     private var cancellable: AnyCancellable?
     
     @Published private var isLoading: Bool = false
-    
     private var subscriptions = Set<AnyCancellable>()
 
     //MARK: -
@@ -46,6 +46,7 @@ class UsersListViewController: UIViewController {
                 new ? self?.spinner.startAnimating() : self?.spinner.stopAnimating()
             }
         })
+        
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -68,6 +69,7 @@ class UsersListViewController: UIViewController {
             
         } receiveValue: { [self] value in
             
+            userModel = value
             if let users = value.users {
                 self.dataSource = users
             } else {
@@ -75,6 +77,9 @@ class UsersListViewController: UIViewController {
             }
             self.isLoading = false
         }.store(in: &subscriptions)
+    }
+    
+    private func getDetailedUsersData() {
     }
     
     private func handleError(message: String? = nil) {
@@ -148,15 +153,18 @@ extension UsersListViewController: UITableViewDelegate {
 extension UsersListViewController: UISearchBarDelegate {
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        search(for: searchText)
+        if searchText.isEmpty {
+            userModel = nil
+            dataSource = nil
+        } else {
+            search(for: searchText)
+        }
     }
 }
 

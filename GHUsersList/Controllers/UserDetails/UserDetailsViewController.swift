@@ -12,7 +12,7 @@ class UserDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var userModel: GHUserModel? = nil
+    var userModel: SearchResultUserModel? = nil
     var repositoriesList: [RepositoryModel]? = nil
 
     //MARK: -
