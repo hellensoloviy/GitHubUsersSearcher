@@ -8,14 +8,23 @@
 import UIKit
 
 class UserDetailsViewController: UIViewController {
+    static let id = "UserDetailsViewController"
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
-    var userModel: SearchResultUserModel? = nil
+    var userModel: DetailedUserModel? = nil
     var repositoriesList: [RepositoryModel]? = nil
 
     //MARK: -
+    init?(userModel: DetailedUserModel, coder: NSCoder) {
+        super.init(coder: coder)
+        self.userModel = userModel
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +35,8 @@ class UserDetailsViewController: UIViewController {
         super.viewWillDisappear(animated)
         
     }
+    
+    //MARK: - Private
 
 }
 

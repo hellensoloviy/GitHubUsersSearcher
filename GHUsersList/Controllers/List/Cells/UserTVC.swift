@@ -23,6 +23,7 @@ class UserTVC: UITableViewCell {
         super.prepareForReuse()
         model = nil
         repositoriesCountLabel.text = ""
+        avatar.image = nil // UIImage(named: "github-mark") //default one
         cancellable = Set<AnyCancellable>()
     }
     

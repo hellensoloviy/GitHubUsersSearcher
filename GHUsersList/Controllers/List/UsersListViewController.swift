@@ -22,7 +22,6 @@ class UsersListViewController: UIViewController {
             }
         }
     }
-    private var cancellable: AnyCancellable?
     
     @Published private var isLoading: Bool = false
     private var subscriptions = Set<AnyCancellable>()
@@ -37,7 +36,7 @@ class UsersListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        cancellable = $isLoading.sink(receiveValue: { [weak self] new in
+        $isLoading.sink(receiveValue: { [weak self] new in
             guard new != self?.isLoading else { return }
 
             DispatchQueue.main.async {
@@ -45,13 +44,13 @@ class UsersListViewController: UIViewController {
                 self?.tableView.isHidden = new
                 new ? self?.spinner.startAnimating() : self?.spinner.stopAnimating()
             }
-        })
+        }).store(in: &subscriptions)
         
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+        subscriptions = Set<AnyCancellable>()
     }
     
     //MARK: - Private
@@ -116,14 +115,22 @@ extension UsersListViewController: UITableViewDataSource {
     
 }
 
-//MARK: - Search Bar Delegate
+//MARK: - Table View Delegate
 extension UsersListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: -- navigation
+        guard let objectFor = dataSource?[indexPath.row] else { return }
         
-//        let detailsVC = UserDetailsViewController()
-//        self.navigationController?.show(detailsVC, sender: nil)
+        guard let vc = storyboard?.instantiateViewController(
+            identifier: UserDetailsViewController.id,
+            creator: { coder in
+               UserDetailsViewController.init(userModel: objectFor, coder: coder)
+            }
+        ) else {
+            fatalError("Failed to create Product Details VC")
+        }
+        
+        self.navigationController?.show(vc, sender: nil)
     }
     
 }
@@ -131,11 +138,9 @@ extension UsersListViewController: UITableViewDelegate {
 //MARK: - Search Bar Delegate
 extension UsersListViewController: UISearchBarDelegate {
 
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) { }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) { }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
