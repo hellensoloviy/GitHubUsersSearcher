@@ -39,8 +39,8 @@ extension Endpoint {
             "X-GitHub-Api-Version": "2022-11-28",
             "Content-Type": "application/json;charset=utf-8",
             "Accept": "application/vnd.github+json",
-            "User-Agent": "GHUsersSearchersApp_APIDemo",
-            "Authorization": "Bearer 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" // personal token - classic
+            "User-Agent": "GHUsersSearchersApp_APIDemo"
+//            "Authorization": "Bearer " // personal token - classic
         ]
     }
 }
