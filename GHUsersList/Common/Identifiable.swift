@@ -7,7 +7,6 @@
 
 import UIKit
 
-// TODO: --- a better method
 protocol Identifiable {
     var identifier: String { get }
 }
