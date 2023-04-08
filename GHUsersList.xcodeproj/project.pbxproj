@@ -32,6 +32,7 @@
 		9B543E2129E16D98001F60D8 /* URLSession+ImageLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E2029E16D98001F60D8 /* URLSession+ImageLoading.swift */; };
 		9B543E2429E1BD11001F60D8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E2329E1BD11001F60D8 /* ProfileHeaderView.swift */; };
 		9B543E2629E1C094001F60D8 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E2529E1C094001F60D8 /* CustomDateFormatter.swift */; };
+		9B543E2929E1E3B8001F60D8 /* URLRequest+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E2829E1E3B8001F60D8 /* URLRequest+Setup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		9B543E2029E16D98001F60D8 /* URLSession+ImageLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+ImageLoading.swift"; sourceTree = "<group>"; };
 		9B543E2329E1BD11001F60D8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		9B543E2529E1C094001F60D8 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
+		9B543E2829E1E3B8001F60D8 /* URLRequest+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Setup.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +200,7 @@
 				9B543E0429E05F2E001F60D8 /* Endpoint.swift */,
 				9B543E0629E05FCF001F60D8 /* RequestError.swift */,
 				9B543E0829E0600D001F60D8 /* NetworkClient.swift */,
+				9B543E2829E1E3B8001F60D8 /* URLRequest+Setup.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				9B543E1429E066C1001F60D8 /* RepositoriesService.swift in Sources */,
 				9B543E1F29E153A1001F60D8 /* DetailedUserModel.swift in Sources */,
 				9B543E1929E080A9001F60D8 /* UsersModel.swift in Sources */,
+				9B543E2929E1E3B8001F60D8 /* URLRequest+Setup.swift in Sources */,
 				9B543E1729E07BD9001F60D8 /* UsersRelatedService.swift in Sources */,
 				9B543E0F29E06232001F60D8 /* RepositoryEndpoint.swift in Sources */,
 				9B543E2129E16D98001F60D8 /* URLSession+ImageLoading.swift in Sources */,
