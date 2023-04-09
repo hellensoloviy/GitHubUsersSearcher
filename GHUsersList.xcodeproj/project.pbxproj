@@ -162,7 +162,6 @@
 		9B543DF029E04A32001F60D8 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				9B543E2C29E2A6E8001F60D8 /* Views */,
 				9B543DD729E042B3001F60D8 /* Main.storyboard */,
 				9B543DDC29E042B5001F60D8 /* LaunchScreen.storyboard */,
 			);
@@ -236,13 +235,6 @@
 			children = (
 				9B543E2329E1BD11001F60D8 /* ProfileHeaderView.swift */,
 				9B543E2F29E2A775001F60D8 /* EmptyStateView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		9B543E2C29E2A6E8001F60D8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
 				9B543E2D29E2A701001F60D8 /* EmptyStateView.xib */,
 			);
 			path = Views;

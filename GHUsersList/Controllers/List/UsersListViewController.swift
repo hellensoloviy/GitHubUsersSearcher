@@ -25,12 +25,9 @@ enum SearchStatus {
 }
                         
                         
-                        
 class UsersListViewController: UIViewController {
-   
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var emptyStateView: EmptyStateView!
 
@@ -57,9 +54,9 @@ class UsersListViewController: UIViewController {
     }
 
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
         subscriptions.forEach({ $0.cancel() })
         subscriptions = Set<AnyCancellable>()
+        super.viewWillDisappear(animated)
     }
     
     //MARK: - Private
@@ -128,7 +125,6 @@ extension UsersListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("=== number of rows = \(dataSource?.count ?? 1111)")
         return dataSource?.count ?? 0
     }
     
@@ -153,6 +149,8 @@ extension UsersListViewController: UITableViewDataSource {
 extension UsersListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
         guard let objectFor = dataSource?[indexPath.row] else { return }
         
         guard let vc = storyboard?.instantiateViewController(

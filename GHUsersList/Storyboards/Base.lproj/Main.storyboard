@@ -163,10 +163,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Avu-qx-m1V" customClass="EmptyStateView" customModule="GHUsersList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="332.66666666666674" width="393" height="485.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3K7-Sb-iga">
                                 <rect key="frame" x="178" y="556.66666666666663" width="37" height="37"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nPA-nM-tiP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nPA-nM-tiP">
                                 <rect key="frame" x="0.0" y="332.66666666666674" width="393" height="485.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -365,10 +369,14 @@
                             <constraint firstItem="MaR-rc-4Ps" firstAttribute="trailing" secondItem="CHY-O0-ifg" secondAttribute="trailing" id="5p2-6B-4mE"/>
                             <constraint firstItem="nPA-nM-tiP" firstAttribute="top" secondItem="pJe-CW-kuu" secondAttribute="bottom" id="645-hg-pg9"/>
                             <constraint firstItem="pJe-CW-kuu" firstAttribute="top" secondItem="CHY-O0-ifg" secondAttribute="bottom" id="ADa-Vs-CFN"/>
+                            <constraint firstItem="Avu-qx-m1V" firstAttribute="height" secondItem="nPA-nM-tiP" secondAttribute="height" id="B9I-av-Ufu"/>
                             <constraint firstItem="pJe-CW-kuu" firstAttribute="top" secondItem="CHY-O0-ifg" secondAttribute="bottom" id="Bdh-Ca-WLg"/>
                             <constraint firstItem="MaR-rc-4Ps" firstAttribute="bottom" secondItem="nPA-nM-tiP" secondAttribute="bottom" id="Elu-RX-qtH"/>
+                            <constraint firstItem="Avu-qx-m1V" firstAttribute="centerX" secondItem="nPA-nM-tiP" secondAttribute="centerX" id="FXH-dT-tog"/>
                             <constraint firstItem="MaR-rc-4Ps" firstAttribute="trailing" secondItem="nPA-nM-tiP" secondAttribute="trailing" id="GjD-Kw-oAf"/>
+                            <constraint firstItem="Avu-qx-m1V" firstAttribute="width" secondItem="nPA-nM-tiP" secondAttribute="width" id="KWz-mf-zx4"/>
                             <constraint firstItem="pJe-CW-kuu" firstAttribute="leading" secondItem="MaR-rc-4Ps" secondAttribute="leading" id="Noh-NE-0td"/>
+                            <constraint firstItem="Avu-qx-m1V" firstAttribute="centerY" secondItem="nPA-nM-tiP" secondAttribute="centerY" id="Wgd-65-R2P"/>
                             <constraint firstItem="CHY-O0-ifg" firstAttribute="top" secondItem="MaR-rc-4Ps" secondAttribute="top" id="YA9-fa-eLF"/>
                             <constraint firstItem="CHY-O0-ifg" firstAttribute="leading" secondItem="MaR-rc-4Ps" secondAttribute="leading" id="enD-w4-ZGk"/>
                             <constraint firstItem="nPA-nM-tiP" firstAttribute="top" secondItem="pJe-CW-kuu" secondAttribute="bottom" id="nzT-6N-vOy"/>
@@ -378,6 +386,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="GitHub Searcher" id="ofj-pa-6gE"/>
                     <connections>
+                        <outlet property="emptyStateView" destination="Avu-qx-m1V" id="Ns5-c9-U9H"/>
                         <outlet property="headerView" destination="CHY-O0-ifg" id="ebv-lS-ItE"/>
                         <outlet property="spinner" destination="3K7-Sb-iga" id="c4G-pu-Abq"/>
                         <outlet property="tableView" destination="nPA-nM-tiP" id="pQ8-hD-Ggu"/>
