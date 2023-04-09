@@ -42,10 +42,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="lHu-Ci-XSX"/>
                                 </connections>
                             </searchBar>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="JIC-Qs-REq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5V8-Cc-kcf" customClass="EmptyStateView" customModule="GHUsersList" customModuleProvider="target">
+                                <rect key="frame" x="-0.66666666666665719" y="147" width="394.33333333333326" height="671"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="JIC-Qs-REq">
                                 <rect key="frame" x="178" y="464" width="37" height="37"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-ue-iZ2">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-ue-iZ2">
                                 <rect key="frame" x="0.0" y="147" width="393" height="671"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -131,13 +135,18 @@
                             <constraint firstItem="zK5-fw-Uij" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MEx-fx-2tm"/>
                             <constraint firstItem="JIC-Qs-REq" firstAttribute="centerY" secondItem="9TG-ue-iZ2" secondAttribute="centerY" id="TCe-2v-agF"/>
                             <constraint firstItem="zK5-fw-Uij" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UyT-Te-H1Q"/>
+                            <constraint firstItem="5V8-Cc-kcf" firstAttribute="width" secondItem="9TG-ue-iZ2" secondAttribute="width" constant="1" id="aQb-bJ-8Nr"/>
                             <constraint firstItem="9TG-ue-iZ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gNN-WT-JIH"/>
                             <constraint firstItem="JIC-Qs-REq" firstAttribute="centerX" secondItem="9TG-ue-iZ2" secondAttribute="centerX" id="h5M-3c-ghL"/>
+                            <constraint firstItem="5V8-Cc-kcf" firstAttribute="height" secondItem="9TG-ue-iZ2" secondAttribute="height" id="oo6-2K-AgF"/>
+                            <constraint firstItem="5V8-Cc-kcf" firstAttribute="centerY" secondItem="9TG-ue-iZ2" secondAttribute="centerY" id="qd9-ib-CF1"/>
                             <constraint firstItem="9TG-ue-iZ2" firstAttribute="top" secondItem="zK5-fw-Uij" secondAttribute="bottom" id="vKB-F1-owM"/>
+                            <constraint firstItem="5V8-Cc-kcf" firstAttribute="centerX" secondItem="9TG-ue-iZ2" secondAttribute="centerX" id="vvg-WQ-ATt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="GitHub Searcher" id="dzb-dv-TKf"/>
                     <connections>
+                        <outlet property="emptyStateView" destination="5V8-Cc-kcf" id="8iH-cf-865"/>
                         <outlet property="spinner" destination="JIC-Qs-REq" id="8Wx-gJ-MhH"/>
                         <outlet property="tableView" destination="9TG-ue-iZ2" id="yN8-Of-wOm"/>
                     </connections>
@@ -154,7 +163,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3K7-Sb-iga">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3K7-Sb-iga">
                                 <rect key="frame" x="178" y="556.66666666666663" width="37" height="37"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nPA-nM-tiP">

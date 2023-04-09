@@ -15,8 +15,8 @@ class UserTVC: UITableViewCell {
     @IBOutlet weak var avatar: UIImageView!
     
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
-    var model: DetailedUserModel?
     private var loaderService: UserProfileLoaderService?
+    private var model: DetailedUserModel?
     
     // MARK: -
     
@@ -43,7 +43,7 @@ class UserTVC: UITableViewCell {
                    .downloadTaskPublisher(for: url)
                    .map { UIImage(contentsOfFile: $0.url.path)! }
                    .receive(on: DispatchQueue.main)
-                   .replaceError(with: UIImage(named: "github-mark-white")) // white so we see when not loaded
+                   .replaceError(with: UIImage(named: "github-mark")) // white so we see when its not loaded
                    .assign(to: \.image, on: self!.avatar)
                    .store(in: &self!.cancellable)
 
