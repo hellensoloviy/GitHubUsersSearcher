@@ -4,6 +4,9 @@ Demo app using Combine and GitHub REST API.
 
 > If you happen to have issue that nothing is loading and only error occurs - it means the limit of request for unathorized apps has been reached. Access token can be added in headers. See `Endpoint` protocol for headers. 
 
+# What to look at
+
+This project is a try of REST API from Github. The network layer is build using Combine. 
 
 # What can it do? 
 
