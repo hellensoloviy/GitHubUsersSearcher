@@ -33,6 +33,9 @@
 		9B543E2429E1BD11001F60D8 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E2329E1BD11001F60D8 /* ProfileHeaderView.swift */; };
 		9B543E2629E1C094001F60D8 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E2529E1C094001F60D8 /* CustomDateFormatter.swift */; };
 		9B543E2929E1E3B8001F60D8 /* URLRequest+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E2829E1E3B8001F60D8 /* URLRequest+Setup.swift */; };
+		9B543E2B29E29DAE001F60D8 /* UserProfileLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E2A29E29DAE001F60D8 /* UserProfileLoaderService.swift */; };
+		9B543E3029E2A775001F60D8 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543E2F29E2A775001F60D8 /* EmptyStateView.swift */; };
+		9B543E3129E2BAD9001F60D8 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B543E2D29E2A701001F60D8 /* EmptyStateView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		9B543E2329E1BD11001F60D8 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		9B543E2529E1C094001F60D8 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		9B543E2829E1E3B8001F60D8 /* URLRequest+Setup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Setup.swift"; sourceTree = "<group>"; };
+		9B543E2A29E29DAE001F60D8 /* UserProfileLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileLoaderService.swift; sourceTree = "<group>"; };
+		9B543E2D29E2A701001F60D8 /* EmptyStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
+		9B543E2F29E2A775001F60D8 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 				9B543E1A29E14A95001F60D8 /* UIViewController+Alertable.swift */,
 				9B543E2029E16D98001F60D8 /* URLSession+ImageLoading.swift */,
 				9B543E2529E1C094001F60D8 /* CustomDateFormatter.swift */,
+				9B543E2A29E29DAE001F60D8 /* UserProfileLoaderService.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -227,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				9B543E2329E1BD11001F60D8 /* ProfileHeaderView.swift */,
+				9B543E2F29E2A775001F60D8 /* EmptyStateView.swift */,
+				9B543E2D29E2A701001F60D8 /* EmptyStateView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -291,6 +300,7 @@
 			files = (
 				9B543DDE29E042B5001F60D8 /* LaunchScreen.storyboard in Resources */,
 				9B543DDB29E042B5001F60D8 /* Assets.xcassets in Resources */,
+				9B543E3129E2BAD9001F60D8 /* EmptyStateView.xib in Resources */,
 				9B543DD929E042B3001F60D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,8 +321,10 @@
 				9B543E0D29E0614F001F60D8 /* UsersRelatedEndpoints.swift in Sources */,
 				9B543E0529E05F2E001F60D8 /* Endpoint.swift in Sources */,
 				9B543DEC29E04738001F60D8 /* RepositoryDetailsTVC.swift in Sources */,
+				9B543E2B29E29DAE001F60D8 /* UserProfileLoaderService.swift in Sources */,
 				9B543E1429E066C1001F60D8 /* RepositoriesService.swift in Sources */,
 				9B543E1F29E153A1001F60D8 /* DetailedUserModel.swift in Sources */,
+				9B543E3029E2A775001F60D8 /* EmptyStateView.swift in Sources */,
 				9B543E1929E080A9001F60D8 /* UsersModel.swift in Sources */,
 				9B543E2929E1E3B8001F60D8 /* URLRequest+Setup.swift in Sources */,
 				9B543E1729E07BD9001F60D8 /* UsersRelatedService.swift in Sources */,

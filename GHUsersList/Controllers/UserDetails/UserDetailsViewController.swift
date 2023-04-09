@@ -14,19 +14,21 @@ class UserDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: ProfileHeaderView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var emptyStateView: EmptyStateView!
 
-    var userModel: DetailedUserModel? = nil
-    var repositoriesList: [RepositoryModel]? = nil {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-
+    private var userModel: DetailedUserModel? = nil
+    @Published private var repositoriesList: [RepositoryModel]? = nil
     
     @Published var isActionInProgress: Bool = false
     private var subscriptions = Set<AnyCancellable>()
+    
+    private var isNoResults: Bool {
+        repositoriesList?.isEmpty ?? true
+    }
+    
+    private var shouldHideList: Bool {
+        isNoResults || isActionInProgress
+    }
 
     //MARK: -
     init?(userModel: DetailedUserModel, coder: NSCoder) {
@@ -42,6 +44,48 @@ class UserDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         tableView.tableFooterView = UIView()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUI()
+        setupSubscriptions()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        subscriptions.forEach({ $0.cancel() })
+        subscriptions.removeAll()
+        super.viewWillDisappear(animated)
+        
+    }
+    
+    //MARK: - Private
+    private func setupUI() {
+        guard let model = userModel else { return }
+        headerView.setupView(with: model)
+        view.updateConstraints()
+    }
+    
+    private func search(for keyword: String = "") {
+        isActionInProgress = true
+        let result = self.userModel?.repositories?.filter({ $0.name?.uppercased().contains(keyword.uppercased()) ?? false })
+        self.repositoriesList = result
+        isActionInProgress = false
+    }
+    
+    private func checkNoResults() {
+        guard !self.isActionInProgress else { return }
+        self.tableView.isHidden = shouldHideList
+
+        guard let repositoriesList = repositoriesList, !repositoriesList.isEmpty else {
+            emptyStateView.setup(with: .noResult)
+            return
+        }
+        emptyStateView.setup(with: .initial)
+    }
+    
+    private func setupSubscriptions() {
         
         if let userModel = userModel {
             RepositoriesService().repositories(for: userModel.username).sink { error in
@@ -61,38 +105,25 @@ class UserDetailsViewController: UIViewController {
         $isActionInProgress
             .receive(on: DispatchQueue.main)
             .sink { [weak self] new in
+                guard let self = self else { return }
                 
-                DispatchQueue.main.async {
-                    self?.spinner.isHidden = !new
-                    self?.tableView.isHidden = new
-                    new ? self?.spinner.startAnimating() : self?.spinner.stopAnimating()
-                }
+                self.spinner.isHidden = !new
+                self.tableView.isHidden = shouldHideList
+                new ? self.spinner.startAnimating() : self.spinner.stopAnimating()
+                    
+        }.store(in: &subscriptions)
+        
+        $repositoriesList
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] new in
+                guard let self = self else { return }
+                
+                self.tableView.reloadData()
+                self.checkNoResults()
+                
         }.store(in: &subscriptions)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setupUI()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-    }
-    
-    //MARK: - Private
-    func setupUI() {
-        guard let model = userModel else { return }
-        headerView.setupView(with: model)
-        view.updateConstraints()
-    }
-    
-    private func search(for keyword: String = "") {
-        isActionInProgress = true
-        let result = self.userModel?.repositories?.filter({ $0.name?.uppercased().contains(keyword.uppercased()) ?? false })
-        self.repositoriesList = result
-        isActionInProgress = false
-    }
 }
 
 //MARK: - TableView DataSource
@@ -124,6 +155,16 @@ extension UserDetailsViewController: UITableViewDataSource {
 
 //MARK: - TableView Delegate
 extension UserDetailsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let objectFor = repositoriesList?[indexPath.row], let url = URL(string: objectFor.url) else { return }
+        
+        DispatchQueue.main.async {
+            tableView.deselectRow(at: indexPath, animated: true)
+            UIApplication.shared.open(url)
+        }
+
+    }
     
 }
 

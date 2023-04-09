@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,25 +34,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="github-mark" translatesAutoresizingMaskIntoConstraints="NO" id="YDp-a0-dla">
+                                <rect key="frame" x="136.66666666666666" y="308" width="119.99999999999997" height="82"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="82" id="mUz-DX-WaH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="UFv-8C-PmE" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4kX-5W-ClM"/>
                             <constraint firstItem="UFv-8C-PmE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BGc-zX-Bor"/>
                             <constraint firstItem="Z5n-mE-XIS" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="JC8-LO-n4J"/>
+                            <constraint firstItem="YDp-a0-dla" firstAttribute="centerX" secondItem="Z5n-mE-XIS" secondAttribute="centerX" id="cmU-rX-Bf9"/>
+                            <constraint firstItem="Z5n-mE-XIS" firstAttribute="top" secondItem="YDp-a0-dla" secondAttribute="bottom" constant="-4" id="rad-zz-5cJ"/>
                             <constraint firstItem="Z5n-mE-XIS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vDL-U8-g4t"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="github-mark" width="120" height="120"/>
     </resources>
 </document>
