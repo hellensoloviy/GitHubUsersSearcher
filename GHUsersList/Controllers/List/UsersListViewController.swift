@@ -103,6 +103,7 @@ extension UsersListViewController: UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: UserTVC().identifier) as? UserTVC {
             cell.bindModel(model)
+            cell.addLoaderService(UserProfileLoaderService(userModel: model))
             return cell
         }
         

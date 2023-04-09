@@ -16,42 +16,24 @@ class UserTVC: UITableViewCell {
     
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     var model: DetailedUserModel?
+    private var loaderService: UserProfileLoaderService?
     
     // MARK: -
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        removeLoader()
         model = nil
         repositoriesCountLabel.text = ""
-        avatar.image = nil // UIImage(named: "github-mark") //default one
+        avatar.image = nil
         cancellable = Set<AnyCancellable>()
     }
+    
+    //MARK: - Binding
     
     func bindModel(_ model: DetailedUserModel) {
         self.model = model
         userNameLabel.text = model.username
-         
-        UsersRelatedService().userProfile(for: model.username)
-            .receive(on: DispatchQueue.main)
-            .sink { error in
-            switch error {
-            case let .failure(error):
-                print("Couldn't load user: \(error)")
-            case .finished: break
-            }
-            
-        } receiveValue: { [self] value in
-            self.model?.reposCount = value.reposCount
-            self.model?.email = value.email
-            self.model?.avatarURL = value.avatarURL
-            self.model?.about = value.about
-            self.model?.location = value.location
-            self.model?.joinedDate = value.joinedDate
-            
-            self.model?.followers = value.followers
-            self.model?.following = value.following
-        }.store(in: &cancellable)
-        
         
         model.$avatarURL
            .sink { [weak self] count in
@@ -73,6 +55,17 @@ class UserTVC: UITableViewCell {
                 guard let count = count else { return }
                 self?.repositoriesCountLabel.text = "\(count)"
             }.store(in: &cancellable)
+    }
+    
+    // MARK: - Loader
+    func addLoaderService(_ loder: UserProfileLoaderService) {
+        self.loaderService = loder
+        loaderService?.load()
+    }
+    
+    func removeLoader() {
+        loaderService?.cancel()
+        self.loaderService = nil
     }
 }
 
