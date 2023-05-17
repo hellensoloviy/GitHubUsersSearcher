@@ -40,7 +40,6 @@ extension Endpoint {
             "Content-Type": "application/json;charset=utf-8",
             "Accept": "application/vnd.github+json",
             "User-Agent": "GHUsersSearchersApp_APIDemo"
-//            "Authorization": "Bearer " // personal token - classic
         ]
     }
 }
