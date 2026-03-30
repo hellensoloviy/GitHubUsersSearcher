@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40FBA4FA2F7E6F580068C3A2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 40FBA4F92F7E6F580068C3A2 /* Localizable.xcstrings */; };
 		9B543DD229E042B3001F60D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543DD129E042B3001F60D8 /* AppDelegate.swift */; };
 		9B543DD429E042B3001F60D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543DD329E042B3001F60D8 /* SceneDelegate.swift */; };
 		9B543DD629E042B3001F60D8 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543DD529E042B3001F60D8 /* UsersListViewController.swift */; };
@@ -39,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		40FBA4F62F7E6E0C0068C3A2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		40FBA4F72F7E6E0C0068C3A2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		40FBA4F92F7E6F580068C3A2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9B543DCE29E042B3001F60D8 /* GHUsersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUsersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B543DD129E042B3001F60D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B543DD329E042B3001F60D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,14 @@
 				9B543E2029E16D98001F60D8 /* URLSession+ImageLoading.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		40FBA4F82F7E6F070068C3A2 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				40FBA4F92F7E6F580068C3A2 /* Localizable.xcstrings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		9B543DC529E042B3001F60D8 = {
@@ -180,6 +192,7 @@
 		9B543DF229E04FC1001F60D8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				40FBA4F82F7E6F070068C3A2 /* Localization */,
 				9B543E2529E1C094001F60D8 /* CustomDateFormatter.swift */,
 				9B543E2A29E29DAE001F60D8 /* UserProfileLoaderService.swift */,
 				40FBA4F52F7E6BF10068C3A2 /* Extensions */,
@@ -290,6 +303,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 9B543DC529E042B3001F60D8;
 			productRefGroup = 9B543DCF29E042B3001F60D8 /* Products */;
@@ -307,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B543DDE29E042B5001F60D8 /* LaunchScreen.storyboard in Resources */,
+				40FBA4FA2F7E6F580068C3A2 /* Localizable.xcstrings in Resources */,
 				9B543DDB29E042B5001F60D8 /* Assets.xcassets in Resources */,
 				9B543E3129E2BAD9001F60D8 /* EmptyStateView.xib in Resources */,
 				9B543DD929E042B3001F60D8 /* Main.storyboard in Resources */,
@@ -355,6 +370,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9B543DD829E042B3001F60D8 /* Base */,
+				40FBA4F62F7E6E0C0068C3A2 /* uk */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -363,6 +379,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9B543DDD29E042B5001F60D8 /* Base */,
+				40FBA4F72F7E6E0C0068C3A2 /* uk */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -374,6 +391,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -426,6 +444,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -434,6 +453,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -479,6 +499,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};

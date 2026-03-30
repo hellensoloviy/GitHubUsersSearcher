@@ -11,11 +11,11 @@ import Combine
 
 class ProfileHeaderView: UIView {
     enum Constants {
-        static let followers = "Followers"
-        static let following = "Following"
+        static let followers = String(localized: "Followers")
+        static let following = String(localized: "Following")
         
-        static let defaultBio = "No Bio to show"
-        static let unknownDate = "Unknown Date"
+        static let defaultBio = String(localized: "No Bio to show")
+        static let unknownDate = String(localized: "Unknown Date")
     }
     
     @IBOutlet weak var username: UILabel!

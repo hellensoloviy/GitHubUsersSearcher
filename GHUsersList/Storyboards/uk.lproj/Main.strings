@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "14X-O7-p03"; */
+"14X-O7-p03.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5J9-Ea-umG"; */
+"5J9-Ea-umG.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9mm-WF-a41"; */
+"9mm-WF-a41.text" = "Label";
+
+/* Class = "UILabel"; text = "Repo: "; ObjectID = "CuF-2q-wcG"; */
+"CuF-2q-wcG.text" = "Репо: ";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "DIU-pW-kcf"; */
+"DIU-pW-kcf.text" = "0";
+
+/* Class = "UILabel"; text = "Stars"; ObjectID = "DMu-fN-ndd"; */
+"DMu-fN-ndd.text" = "Зірки";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HDJ-OP-cuB"; */
+"HDJ-OP-cuB.text" = "Label";
+
+/* Class = "UILabel"; text = "Forks"; ObjectID = "INs-hM-khA"; */
+"INs-hM-khA.text" = "Форки";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "JH5-Ob-Zq5"; */
+"JH5-Ob-Zq5.text" = "Label";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Lcp-i4-f7u"; */
+"Lcp-i4-f7u.text" = "0";
+
+/* Class = "UILabel"; text = "Bio"; ObjectID = "NVr-lf-YgT"; */
+"NVr-lf-YgT.text" = "Біо";
+
+/* Class = "UINavigationItem"; title = "GitHub Searcher"; ObjectID = "dzb-dv-TKf"; */
+"dzb-dv-TKf.title" = "GitHub Пошуківець";
+
+/* Class = "UINavigationItem"; title = "GitHub Searcher"; ObjectID = "ofj-pa-6gE"; */
+"ofj-pa-6gE.title" = "GitHub Пошуківець";
+
+/* Class = "UISearchBar"; placeholder = "Search for Users's Repositories"; ObjectID = "pJe-CW-kuu"; */
+"pJe-CW-kuu.placeholder" = "Пошук по репозиторіях";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "qke-eE-FjZ"; */
+"qke-eE-FjZ.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "rLv-WM-bUv"; */
+"rLv-WM-bUv.text" = "Label";
+
+/* Class = "UILabel"; text = "   "; ObjectID = "ri3-Hs-ysy"; */
+"ri3-Hs-ysy.text" = "   ";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "swD-4B-eD9"; */
+"swD-4B-eD9.text" = "00";
+
+/* Class = "UISearchBar"; placeholder = "Search for Users"; ObjectID = "zK5-fw-Uij"; */
+"zK5-fw-Uij.placeholder" = "Пошук користувачів";

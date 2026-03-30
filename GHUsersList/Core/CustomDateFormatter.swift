@@ -22,8 +22,9 @@ struct CustomDateFormatter {
             let stringToReturn = dateFormatter.string(from: date)
             return stringToReturn
         }
-        return "Unknown date"
+        return String(localized: "Unknown date")
         
     }
     
 }
+

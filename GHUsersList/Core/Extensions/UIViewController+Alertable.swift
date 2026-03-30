@@ -14,9 +14,11 @@ protocol Alertable {
 
 extension UIViewController: Alertable {
     func showError(with message: String? = nil) {
-        let dialogMessage = UIAlertController(title: "Error", message: message ??  "Unknown error", preferredStyle: .alert)
+        let dialogMessage = UIAlertController(title: String(localized: "Error"),
+                                              message: message ??  String(localized: "Unknown error"),
+                                              preferredStyle: .alert)
         
-        let close = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+        let close = UIAlertAction(title: String(localized: "OK"), style: .default, handler: { (action) -> Void in
             DispatchQueue.main.async {
                 self.dismiss(animated: true)
             }

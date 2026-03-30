@@ -10,10 +10,20 @@ import UIKit
 
 class EmptyStateView: UIView {
     enum State: String {
-        case empty = " "
-        case pleaseStart = "Please type to start searching :)"
-        case noResults = "Opps! Looks like no results \nfor your search request. \nPlease try another one ^_^"
-        case error  = "Something broke T_T \nWe are very sorry and will fix it as soon as possible"
+        case empty
+        case pleaseStart
+        case noResults
+        case error
+        
+        
+        var message: String {
+            switch self {
+            case .empty: return " "
+            case .pleaseStart: return String(localized: "before_start")
+            case .noResults: return String(localized: "no_results")
+            case .error: return String(localized: "search_error")
+            }
+        }
         
         init(with status: SearchStatus) {
             switch status {
@@ -28,7 +38,7 @@ class EmptyStateView: UIView {
     private var state = State.empty {
         didSet {
             DispatchQueue.main.async {
-                self.descriptionLabel.text = self.state.rawValue
+                self.descriptionLabel.text = self.state.message
             }
         }
     }
