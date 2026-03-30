@@ -83,6 +83,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40FBA4F52F7E6BF10068C3A2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B543DF329E04FD0001F60D8 /* Identifiable.swift */,
+				9B543E1A29E14A95001F60D8 /* UIViewController+Alertable.swift */,
+				9B543E2029E16D98001F60D8 /* URLSession+ImageLoading.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9B543DC529E042B3001F60D8 = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +114,10 @@
 			children = (
 				9B543DD129E042B3001F60D8 /* AppDelegate.swift */,
 				9B543DD329E042B3001F60D8 /* SceneDelegate.swift */,
-				9B543DF229E04FC1001F60D8 /* Common */,
+				9B543DF229E04FC1001F60D8 /* Core */,
 				9B543DF529E05443001F60D8 /* Models */,
 				9B543E0129E05E8F001F60D8 /* Network */,
-				9B543DE729E0448F001F60D8 /* Controllers */,
+				9B543DE729E0448F001F60D8 /* Features */,
 				9B543DF029E04A32001F60D8 /* Storyboards */,
 				9B543DDF29E042B5001F60D8 /* Info.plist */,
 				9B543DDA29E042B5001F60D8 /* Assets.xcassets */,
@@ -115,14 +125,13 @@
 			path = GHUsersList;
 			sourceTree = "<group>";
 		};
-		9B543DE729E0448F001F60D8 /* Controllers */ = {
+		9B543DE729E0448F001F60D8 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				9B543E2229E1BCFA001F60D8 /* Views */,
 				9B543DED29E047AB001F60D8 /* List */,
 				9B543DEE29E047B5001F60D8 /* UserDetails */,
 			);
-			path = Controllers;
+			path = Features;
 			sourceTree = "<group>";
 		};
 		9B543DEA29E046E2001F60D8 /* Cells */ = {
@@ -168,16 +177,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		9B543DF229E04FC1001F60D8 /* Common */ = {
+		9B543DF229E04FC1001F60D8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				9B543DF329E04FD0001F60D8 /* Identifiable.swift */,
-				9B543E1A29E14A95001F60D8 /* UIViewController+Alertable.swift */,
-				9B543E2029E16D98001F60D8 /* URLSession+ImageLoading.swift */,
 				9B543E2529E1C094001F60D8 /* CustomDateFormatter.swift */,
 				9B543E2A29E29DAE001F60D8 /* UserProfileLoaderService.swift */,
+				40FBA4F52F7E6BF10068C3A2 /* Extensions */,
+				9B543E2229E1BCFA001F60D8 /* ReusableViews */,
 			);
-			path = Common;
+			path = Core;
 			sourceTree = "<group>";
 		};
 		9B543DF529E05443001F60D8 /* Models */ = {
@@ -230,14 +238,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		9B543E2229E1BCFA001F60D8 /* Views */ = {
+		9B543E2229E1BCFA001F60D8 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
 				9B543E2329E1BD11001F60D8 /* ProfileHeaderView.swift */,
 				9B543E2F29E2A775001F60D8 /* EmptyStateView.swift */,
 				9B543E2D29E2A701001F60D8 /* EmptyStateView.xib */,
 			);
-			path = Views;
+			path = ReusableViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

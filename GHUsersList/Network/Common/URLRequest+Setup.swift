@@ -18,7 +18,7 @@ extension URLRequest {
         urlComponents.queryItems = endpoint.queryItems
         
         guard let url = urlComponents.url else {
-            fatalError("should not be like this!")
+            fatalError("🔴 should not be like this!")
         }
         
         var request = URLRequest(url: url)
