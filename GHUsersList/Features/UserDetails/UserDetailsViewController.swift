@@ -20,6 +20,8 @@ class UserDetailsViewController: UIViewController {
     @Published private var repositoriesList: [RepositoryModel]? = nil
     
     @Published var isActionInProgress: Bool = false
+    
+    @ThreadSafeWithLock
     private var subscriptions = Set<AnyCancellable>()
     
     private var isNoResults: Bool {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		40FBA4FA2F7E6F580068C3A2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 40FBA4F92F7E6F580068C3A2 /* Localizable.xcstrings */; };
+		40FBA5012F7E7E7A0068C3A2 /* ThreadWithLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FBA5002F7E7E7A0068C3A2 /* ThreadWithLock.swift */; };
+		40FBA5032F7E7E9D0068C3A2 /* NSLock+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FBA5022F7E7E9D0068C3A2 /* NSLock+.swift */; };
 		9B543DD229E042B3001F60D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543DD129E042B3001F60D8 /* AppDelegate.swift */; };
 		9B543DD429E042B3001F60D8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543DD329E042B3001F60D8 /* SceneDelegate.swift */; };
 		9B543DD629E042B3001F60D8 /* UsersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B543DD529E042B3001F60D8 /* UsersListViewController.swift */; };
@@ -43,6 +45,8 @@
 		40FBA4F62F7E6E0C0068C3A2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
 		40FBA4F72F7E6E0C0068C3A2 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		40FBA4F92F7E6F580068C3A2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		40FBA5002F7E7E7A0068C3A2 /* ThreadWithLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadWithLock.swift; sourceTree = "<group>"; };
+		40FBA5022F7E7E9D0068C3A2 /* NSLock+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLock+.swift"; sourceTree = "<group>"; };
 		9B543DCE29E042B3001F60D8 /* GHUsersList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHUsersList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B543DD129E042B3001F60D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B543DD329E042B3001F60D8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,15 @@
 				9B543E2829E1E3B8001F60D8 /* URLRequest+Setup.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		40FBA4FF2F7E7E6C0068C3A2 /* ThreadSafe */ = {
+			isa = PBXGroup;
+			children = (
+				40FBA5002F7E7E7A0068C3A2 /* ThreadWithLock.swift */,
+				40FBA5022F7E7E9D0068C3A2 /* NSLock+.swift */,
+			);
+			path = ThreadSafe;
 			sourceTree = "<group>";
 		};
 		9B543DC529E042B3001F60D8 = {
@@ -209,6 +222,7 @@
 		9B543DF229E04FC1001F60D8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				40FBA4FF2F7E7E6C0068C3A2 /* ThreadSafe */,
 				40FBA4F82F7E6F070068C3A2 /* Localization */,
 				9B543E2529E1C094001F60D8 /* CustomDateFormatter.swift */,
 				9B543E2A29E29DAE001F60D8 /* UserProfileLoaderService.swift */,
@@ -353,12 +367,14 @@
 			files = (
 				9B543DE929E046CA001F60D8 /* UserTVC.swift in Sources */,
 				9B543DF729E05452001F60D8 /* RepositoryModel.swift in Sources */,
+				40FBA5032F7E7E9D0068C3A2 /* NSLock+.swift in Sources */,
 				9B543DD629E042B3001F60D8 /* UsersListViewController.swift in Sources */,
 				9B543E0729E05FCF001F60D8 /* RequestError.swift in Sources */,
 				9B543E2429E1BD11001F60D8 /* ProfileHeaderView.swift in Sources */,
 				9B543E1B29E14A95001F60D8 /* UIViewController+Alertable.swift in Sources */,
 				9B543E0D29E0614F001F60D8 /* UsersRelatedEndpoints.swift in Sources */,
 				9B543E0529E05F2E001F60D8 /* Endpoint.swift in Sources */,
+				40FBA5012F7E7E7A0068C3A2 /* ThreadWithLock.swift in Sources */,
 				9B543DEC29E04738001F60D8 /* RepositoryDetailsTVC.swift in Sources */,
 				9B543E2B29E29DAE001F60D8 /* UserProfileLoaderService.swift in Sources */,
 				9B543E1429E066C1001F60D8 /* RepositoriesService.swift in Sources */,

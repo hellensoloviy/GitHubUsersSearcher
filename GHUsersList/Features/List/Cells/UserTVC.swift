@@ -14,7 +14,9 @@ class UserTVC: UITableViewCell {
     @IBOutlet weak var repositoriesCountLabel: UILabel!
     @IBOutlet weak var avatar: UIImageView!
     
+    @ThreadSafeWithLock
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
+    
     private var loaderService: UserProfileLoaderService?
     private var model: DetailedUserModel?
     

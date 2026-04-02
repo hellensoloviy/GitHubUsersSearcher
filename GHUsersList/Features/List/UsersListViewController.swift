@@ -36,7 +36,10 @@ class UsersListViewController: UIViewController {
     @Published private var dataSource: [DetailedUserModel]? = nil
     @Published private var state = SearchStatus.initial
     
+    @ThreadSafeWithLock
     private var subscriptions = Set<AnyCancellable>()
+    
+    @ThreadSafeWithLock
     private var searchSubscription: AnyCancellable? = nil
     
 
